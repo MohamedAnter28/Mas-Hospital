@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wdth,wght@50..200,200..900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+:root{
+  --bg-main:#f0f0f0;
+  --main-color: #fff;
+  --secondary-color:#f6f4ee;
+  --third-color: #f03000;
+  --font-family: "Inconsolata", monospace;
+}
+
+::placeholder{
+  opacity: 0.4;
+}
+
+body{
+  font-family: var(--font-family);
+  background-color: var(--bg-main);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.card{
+  width: 450px;
+  height: 400px;
+  perspective: 1000px;
+}
+
+.login-page,.signup-page{
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  transition: transform 0.6s;
+  text-align: center;
+}
+
+
+.login-page .header{
+  margin-bottom: 12px;
+}
+
+.login-page .header h1{
+  color: #111;
+  margin-bottom: 5px;
+}
+
+.login-page .header h1 img{
+  margin-left: 8px;
+}
+
+.login-page .header p{
+  font-size: 15px;
+}
+
+
+form{
+  width: 80%;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
+
+
+.f-1,.f-2,.f-3,.f-4{
+  display: flex;
+  flex-direction: column;
+}
+
+.f-1 label,.f-2 label,.f-3 label,.f-4 label{
+  display: flex;
+  align-items: flex-start;
+  padding: 5px;
+}
+
+
+input{
+  padding: 7px 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  caret-color: #111;
+}
+
+
+input.error{
+  border: 1px solid var(--third-color);
+}
+
+.btn{
+  padding: 8px;
+  border-radius: 8px;
+  outline: none;
+  border: 1px solid #111;
+  cursor: pointer;
+  transition: all 0.7s;
+  margin: 8px 0;
+}
+
+
+.btn:hover{
+  box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+}
+
+
+.create-account{
+  font-size: 13px;
+}
+
+.create-account .signup-flib{
+  margin-left: 5px;
+  color: burlywood;
+  cursor: pointer;
+}
+
+
+.signup-page{
+  transform: rotateY(180deg);
+}
+
+.card.flipped .login-page{
+  transform: rotateY(180deg);
+}
+
+.card.flipped .signup-page{
+  transform: rotateY(360deg);
+}
